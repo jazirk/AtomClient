@@ -9,6 +9,6 @@ export class ToastMessageService {
   constructor(private toastr: ToastrService) { }
 
   showToastMessageByType(type: string, message: any, options?: any) {
-    this.toastr[type](message.detail, message.shortMsg, options);
+    this.toastr[type](message?.detail, message?.shortMsg, options);
   }
 }

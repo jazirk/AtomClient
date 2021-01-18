@@ -7,8 +7,7 @@ export const AppConstants = {
         }
     },
     API_ENDPOINTS: {
-        // GET_BOOKS: "/books/v1/"
-        GET_BOOKS: "/books/v1/volumes?q=kaplan%20test%20prep"
+        GET_BOOKS: "/volumes"
     },
     STATUS_CODE: {
         SUCCESS: 200,

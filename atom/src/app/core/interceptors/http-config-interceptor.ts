@@ -31,8 +31,8 @@ export class HTTPConfigInterceptor implements HttpInterceptor {
             .set('Access-Control-Allow-Headers', 'Content-Type')
             .set('Access-Control-Allow-Origin', '*')
             .set('accept', '*/*')
-            .set("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept, Authorization")
-            
+            .set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
+
 
         this.updatedRequest = request.clone({ headers });
         // return next.handle(this.updatedRequest);
@@ -40,31 +40,16 @@ export class HTTPConfigInterceptor implements HttpInterceptor {
         return next.handle(this.updatedRequest).pipe(
             tap((event: HttpEvent<any>) => {
                 if (event instanceof HttpResponse && this.STATUS_CODES.includes(event.status) && event.body) {
-                    // const apiUrlShowingInlineMessages = AppConstants.API_URLS_SHOWING_INLINE_MESSAGES;
-                    // if (!apiUrlShowingInlineMessages.find(element => event.url.indexOf(element) > -1)) {
-                        const body = event.body;
-                        if (body.status == AppConstants.HTTP_MESSAGE_TYPE.FAIL && body.errorCode) {
-                            const message = { shortMsg: body?.errorMessage, detail: body?.detail };
-                            this.toastMsgService.showToastMessageByType(AppConstants.ALERT_TYPE.ERROR, message);
-                            // switch (body?.errorCode) {
-                            //     case AppConstants.STATUS_CODE.APZ_CODE.PSWD_EXP:
-                            //         this.toastMsgService.showToastMessageByType(AppConstants.ALERT_TYPE.ERROR, message);
-                            //         this.authService.redirectToChangePwsd(this.updatedRequest.body?.userId);
-                            //         break;
-                            //     default:
-                            //         this.toastMsgService.showToastMessageByType(AppConstants.ALERT_TYPE.ERROR, message);
-                            //         break;
-                            // }
-                            // need to check with back end team
-                            // } else if (body.status == AppConstants.HTTP_MESSAGE_TYPE.SUCCESS && body.httpStatus == AppConstants.STATUS_CODE.CREATED) {
-                        }
-                        else if (body.status == AppConstants.STATUS_CODE.SUCCESS) {
-                            // if (!event.url.includes(AppConstants.API_ENDPOINTS.AUTH.GET_TOKEN)) {
-                                const message = { shortMsg: body?.message, detail: body?.detail };
-                                this.toastMsgService.showToastMessageByType(AppConstants.ALERT_TYPE.SUCCESS, message);
-                            // }
-                        }
-                    // }
+                    const body = event.body;
+                    if (body.status == AppConstants.HTTP_MESSAGE_TYPE.FAIL && body.errorCode) {
+                        const message = { shortMsg: body?.errorMessage, detail: body?.detail };
+                        this.toastMsgService.showToastMessageByType(AppConstants.ALERT_TYPE.ERROR, message);
+                    }
+                    else if (event.status == AppConstants.STATUS_CODE.SUCCESS) {
+                        // const message = { shortMsg: body?.message, detail: body?.detail };
+                        const message = { shortMsg: body?.kind};
+                        this.toastMsgService.showToastMessageByType(AppConstants.ALERT_TYPE.SUCCESS, message);
+                    }
                 }
             }));
     }

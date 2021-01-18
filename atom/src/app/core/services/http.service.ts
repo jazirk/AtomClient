@@ -30,12 +30,6 @@ export class HttpService {
   }
 
   post(path: string, body: object = {}): Observable<any> {
-    if (path.includes('changePassword')) {
-      return this.http.post(path, body)
-      .pipe(
-        catchError(this.formatErrors)
-      );
-    }
     return this.http.post(`${this.BASE_URL}${path}`, body)
       .pipe(
         catchError(this.formatErrors)
