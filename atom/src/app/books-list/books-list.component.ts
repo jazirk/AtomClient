@@ -27,7 +27,7 @@ export class BooksListComponent implements OnInit {
         if (response.status == AppConstants.STATUS_CODE.SUCCESS) {
           this.books = response.body;
           this.isBooksNull = true;
-          console.log(this.books)
+          console.log(this.books);
         }
       });
   }
