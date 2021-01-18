@@ -1,0 +1,10 @@
+<ul class="navbar-nav pt-3">
+    <li class="nav-item"><a class="nav-link" href="javascript:void(0)" (click)="toggleSidebar()"><i class="fa fa-align-left"></i> <span *ngIf="!isCollapsed">Menu</span></a>
+    </li>
+    <li class="nav-item"><a class="nav-link" href="javascript:void(0)">
+        <i class="fa fa-pencil-square-o"></i>
+        <span *ngIf="!isCollapsed">Content Management <i class="fa fa-chevron-down"></i></span> 
+    </a></li>
+    <li class="nav-item"><a class="nav-link" href="javascript:void(0)"><i class="fa fa-pencil-square-o"></i>
+        <span *ngIf="!isCollapsed">Courses</span></a></li>
+</ul>

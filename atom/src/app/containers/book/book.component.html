@@ -1,0 +1,12 @@
+<div class="card bg-white custom-card">
+    <div class="card-body">
+        <h3 class="book-header">{{book?.volumeInfo.title}}</h3>
+        <p>Authors:
+            <ng-container *ngFor="let author of book?.volumeInfo.authors">
+                <span> {{author}}</span>
+            </ng-container>
+        </p>
+        <p>Publisher: {{book?.volumeInfo.publisher}}</p>
+        <p>Published Date: {{book?.volumeInfo.publishedDate}}</p>
+    </div>
+</div>

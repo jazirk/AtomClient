@@ -1,0 +1,21 @@
+
+.left-sidebar {
+    position: relative;
+    height: 100%;
+    transition: 0.6s ease;
+    border-right: 2px solid #ddd;
+}
+.main-wrapper {
+    background-color: #F9F9F9;
+    overflow:hidden;
+    overflow-y: auto;
+    height: calc(100vh - 40px);
+    padding-bottom: 30px;
+}
+
+.collapsed{
+    max-width: 4%;
+}
+.expend-main{
+    min-width: 96%;
+}
