@@ -6,8 +6,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { SearchComponent } from '../search/search.component';
-import { HttpInterceptorProviders } from '@app/core/interceptors';
 
 
 @NgModule({

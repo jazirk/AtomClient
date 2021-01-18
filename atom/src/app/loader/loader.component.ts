@@ -8,6 +8,7 @@ import { LoaderService } from '@app/core/services/loader.service';
 })
 export class LoaderComponent {
 
-  constructor(public loaderService: LoaderService) { }
+  constructor(public loaderService: LoaderService) {
+   }
 
 }

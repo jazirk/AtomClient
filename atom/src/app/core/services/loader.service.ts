@@ -10,6 +10,7 @@ export class LoaderService {
   constructor() { }
 
   show() {
+    console.log("loading...");
     this.showLoader = true;
   }
 

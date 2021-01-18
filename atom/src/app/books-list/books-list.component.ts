@@ -51,6 +51,7 @@ export class BooksListComponent implements OnInit {
   // }
   // books :Books;
   books: any;
+  isBooksNull: boolean = false;
 
   constructor(private httpServ: HttpService) { }
 
@@ -63,7 +64,7 @@ export class BooksListComponent implements OnInit {
       .subscribe(response => {
         if (response.status == AppConstants.STATUS_CODE.SUCCESS) {
           this.books = response.body;
-          console.log("response", response);
+          this.isBooksNull = true;
         }
       });
   }

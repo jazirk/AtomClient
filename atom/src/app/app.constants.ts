@@ -13,10 +13,7 @@ export const AppConstants = {
     STATUS_CODE: {
         SUCCESS: 200,
         CREATED: 201,
-        MAX_SUCCESS_CODE: 206,
-        APZ_CODE: {
-            PSWD_EXP: 'APZ_EXP_003'
-        }
+        MAX_SUCCESS_CODE: 206
     },
     HTTP_MESSAGE_TYPE: {
         WARN: 'WARN',
