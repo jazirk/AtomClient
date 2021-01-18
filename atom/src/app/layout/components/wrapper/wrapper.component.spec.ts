@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HeaderComponent } from '../header/header.component';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 import { WrapperComponent } from './wrapper.component';
 
@@ -8,7 +10,11 @@ describe('WrapperComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WrapperComponent ]
+      declarations: [
+        WrapperComponent,
+        SidebarComponent,
+        HeaderComponent
+      ]
     })
     .compileComponents();
   }));

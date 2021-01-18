@@ -13,7 +13,8 @@ function initTestBed() {
       ToastrModule.forRoot({ positionClass: 'toast-bottom-left' })
     ],
     declarations: [
-      AppComponent
+      AppComponent,
+      LoaderComponent
     ]
   }).compileComponents();
 }
