@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
+    "start": "ng serve --proxy-config proxy.conf.json --port 4200 & node index.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -26,7 +26,11 @@
     "ngx-toastr": "^13.2.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.0",

@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  // API_URL: "https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep"
+  API_URL: "http://localhost:3000/googleapis.com"
   // API_URL: "https://www.googleapis.com",
-  API_URL: "https://jsonplaceholder.typicode.com"
 };
 
 /*

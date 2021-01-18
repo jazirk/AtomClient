@@ -28,16 +28,17 @@ export class HTTPConfigInterceptor implements HttpInterceptor {
         // Pass headers for API.
         const headers = request.headers
             .set('Content-Type', AppConstants.AUTH_DATA.HEADERS.APP_JSON_CONTENT_TYPE)
-            // .set('Idempotency-Key', AppConstants.AUTH_DATA.HEADERS.IDEMPOTENCY_KEY);
-            .set('contentType', AppConstants.AUTH_DATA.HEADERS.CORS)
+            // .set('contentType', AppConstants.AUTH_DATA.HEADERS.CORS)
             .set('Access-Control-Allow-Headers', 'Content-Type')
             .set('Access-Control-Allow-Origin', '*')
-            .set('AccessControlAllowOrigin', 'Content-Type')
+            // .set('AccessControlAllowOrigin', 'Content-Type')
+            .set('crossDomain', 'true')
+            .set('accept', '*/*')
 
             // "Access-Control-Allow-Origin": "*",
-            // "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+            .set("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept, Authorization")
             
-            console.log("hdrs::", headers, request.url);
+            console.log("http headers::", headers, request.url);
 
         this.updatedRequest = request.clone({ headers });
         return next.handle(this.updatedRequest);
