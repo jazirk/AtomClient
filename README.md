@@ -4,9 +4,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
-cd into /kaplan-books-list/atom
-
 ## Development server
+
+cd into "/kaplan-books-list/atom"
 
 Run `npm i` to install the dependencies
 
