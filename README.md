@@ -10,7 +10,7 @@ cd into /kaplan-books-list/atom
 
 Run `npm i` to install the dependencies
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/` or `http://localhost:4201/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
