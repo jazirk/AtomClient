@@ -4,6 +4,8 @@ import {AppConstants} from '@app/app.constants';
 import {Books} from '@app/core/models/books-list';
 import {HttpService} from '@app/core/services/http.service';
 
+//import {DatastoreService} from "@app/core/services/datastore.service";
+
 @Component({
     selector: 'app-books-list',
     templateUrl: './books-list.component.html',
@@ -16,7 +18,9 @@ export class BooksListComponent implements OnInit {
     filteredBooks;
     isLoading: boolean;
 
-    constructor(private httpServ: HttpService) {
+    constructor(private httpServ: HttpService
+                //private dataService: DatastoreService
+    ) {
     }
 
     ngOnInit(): void {
@@ -32,17 +36,23 @@ export class BooksListComponent implements OnInit {
                     this.books = response.body;
                     this.filteredBooks = response.body;
                     this.isLoading = false;
-                    console.log(this.books);
                 }
             });
+
+        /*
+        //@NgRx store/effects way
+        // this.dataService.getData().subscribe(response => {
+        //     this.books = response.items;
+        //     this.filteredBooks = response.items;
+        //     this.isLoading = false;
+        // })
+       */
     }
 
     searchBooks(searchText): void {
         this.filteredBooks = {
-            kind: this.books.kind,
-            totalItems: this.books.totalItems,
+            ...this.filteredBooks,
             items: this.books.items.filter((item) => item.volumeInfo.title.includes(searchText))
         }
     }
-
 }

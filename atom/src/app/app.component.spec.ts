@@ -30,10 +30,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'atom-books'`, () => {
+  it(`should have as title 'Atom Client'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('atom-books');
+    expect(app.title).toEqual('Atom Client');
   });
 
 });

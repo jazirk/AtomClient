@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DatastoreService} from "@app/core/services/datastore.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Atom Client';
+
+  /*NgRx store/effects ways
+  // constructor(private dataService: DatastoreService) {
+  //   this.dataService.load();
+  // }
+  */
 }

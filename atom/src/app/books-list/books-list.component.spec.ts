@@ -5,8 +5,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpService } from '@app/core/services/http.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
-import { SearchComponent } from '@app/containers/search/search.component';
-import { BookComponent } from '@app/containers/book/book.component';
+import { SearchComponent } from '@app/shared/search/search.component';
+import { BookComponent } from '@app/shared/book/book.component';
 
 function initTestBed() {
   TestBed.configureTestingModule({

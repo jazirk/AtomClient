@@ -8,7 +8,7 @@ export class Books {
         title: string,
         publisher: string,
         publishedDate: Date,
-        authors: String[]
+        authors: Array<any>
       }
     }
   ];

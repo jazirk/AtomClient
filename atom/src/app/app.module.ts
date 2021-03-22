@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import {metaReducers, reducers} from "@app/store/reducers";
+import {effects} from "@app/store/effects";
 
 @NgModule({
   declarations: [
@@ -24,8 +26,8 @@ import { EffectsModule } from '@ngrx/effects';
     LayoutModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({ positionClass: 'toast-bottom-left'}),
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([])
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot(effects)
   ],
   providers: [ HttpInterceptorProviders ],
   bootstrap: [AppComponent]
