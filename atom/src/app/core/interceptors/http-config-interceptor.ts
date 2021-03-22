@@ -25,27 +25,16 @@ export class HTTPConfigInterceptor implements HttpInterceptor {
         next: HttpHandler
     ): Observable<HttpEvent<any>> {
 
-        // Pass headers for API.
-        const headers = request.headers
-            .set('Content-Type', AppConstants.AUTH_DATA.HEADERS.APP_JSON_CONTENT_TYPE)
-            .set('Access-Control-Allow-Headers', 'Content-Type')
-            .set('Access-Control-Allow-Origin', '*')
-            .set('accept', '*/*')
-            .set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
 
-
-        this.updatedRequest = request.clone({ headers });
-        // return next.handle(this.updatedRequest);
-
-        return next.handle(this.updatedRequest).pipe(
+        return next.handle(request).pipe(
             tap((event: HttpEvent<any>) => {
                 if (event instanceof HttpResponse && this.STATUS_CODES.includes(event.status) && event.body) {
                     const body = event.body;
-                    if (body.status == AppConstants.HTTP_MESSAGE_TYPE.FAIL && body.errorCode) {
+                    if (body.status === AppConstants.HTTP_MESSAGE_TYPE.FAIL && body.errorCode) {
                         const message = { shortMsg: body?.errorMessage, detail: body?.detail };
                         this.toastMsgService.showToastMessageByType(AppConstants.ALERT_TYPE.ERROR, message);
                     }
-                    else if (event.status == AppConstants.STATUS_CODE.SUCCESS) {
+                    else if (event.status === AppConstants.STATUS_CODE.SUCCESS) {
                         // const message = { shortMsg: body?.message, detail: body?.detail };
                         const message = { shortMsg: body?.kind};
                         this.toastMsgService.showToastMessageByType(AppConstants.ALERT_TYPE.SUCCESS, message);

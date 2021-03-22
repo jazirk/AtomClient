@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: "http://localhost:3000/googleapis.com/books/v1"
-  // API_URL: "https://www.googleapis.com",
+  // API_URL: "http://localhost:3000/googleapis.com/books/v1"
+  API_URL: "https://www.googleapis.com",
 };
 
 /*

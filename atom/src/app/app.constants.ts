@@ -1,5 +1,5 @@
 export const AppConstants = {
-    PRODUCT_NAME: 'Atom',
+    PRODUCT_NAME: 'AtomClient',
     AUTH_DATA: {
         HEADERS: {
             APP_JSON_CONTENT_TYPE: 'application/json',
@@ -7,7 +7,7 @@ export const AppConstants = {
         }
     },
     API_ENDPOINTS: {
-        GET_BOOKS: "/volumes"
+        GET_BOOKS: '/books/v1/volumes'
     },
     STATUS_CODE: {
         SUCCESS: 200,

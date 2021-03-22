@@ -19,5 +19,11 @@ export class SidebarComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
     this.onClickCollapsed.emit(this.isCollapsed);
   }
+  // for accessibility
+  enterClick(event) {
+    if (event.keyCode === 13) {
+      this.toggleSidebar();
+    }
+  }
 
 }

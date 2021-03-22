@@ -1,4 +1,5 @@
-
+@import "src/assets/resources/mixins";
+@import "src/assets/resources/variable";
 .left-sidebar {
     position: relative;
     height: 100%;
@@ -6,9 +7,10 @@
     border-right: 2px solid #ddd;
 }
 .main-wrapper {
-    background-color: #F9F9F9;
+    background-color: $color-background;
     overflow:hidden;
     overflow-y: auto;
+    @include scroll-bar();
     height: calc(100vh - 40px);
     padding-bottom: 30px;
 }
