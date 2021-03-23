@@ -34,4 +34,6 @@ Run `ng test --no-watch --code-coverage` to generate the code coverage
 3. Added unit test cases.
 4. Used stores and effects from NgRx.
 5. Error handling.
-6. Accesbility features.
+6. Accesbility features. 
+7. server side rendering with Angular universal.
+8. offline capabilities with PWA
