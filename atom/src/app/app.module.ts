@@ -13,6 +13,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {metaReducers, reducers} from "@app/store/reducers";
 import {effects} from "@app/store/effects";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {effects} from "@app/store/effects";
     BrowserAnimationsModule,
     ToastrModule.forRoot({ positionClass: 'toast-bottom-left'}),
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot(effects)
+    EffectsModule.forRoot(effects),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ HttpInterceptorProviders ],
   bootstrap: [AppComponent]
