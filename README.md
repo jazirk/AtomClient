@@ -1,4 +1,3 @@
-# kaplan-books-list
 
 # Atom Client
 
@@ -6,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-cd into "/kaplan-books-list/atom"
+cd into "/AtomClient/atom"
 
 Run `npm i` to install the dependencies
 
@@ -28,6 +27,11 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng test --no-watch --code-coverage` to generate the code coverage
 
-## Further help
+## Other Details
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. Based on Angular 9.
+2. Dockerized.
+3. Added unit test cases.
+4. Used stores and effects from NgRx.
+5. Error handling.
+6. Accesbility features.
