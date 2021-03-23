@@ -20,8 +20,8 @@ import {effects} from "@app/store/effects";
     LoaderComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot([], {preloadingStrategy: PreloadAllModules}),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    RouterModule.forRoot([], { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' }),
     HttpClientModule,
     LayoutModule,
     BrowserAnimationsModule,
